@@ -1,37 +1,3 @@
-sprites = "floor0,image/tileset/floor1.png,16,16,0,0,idle,,0;0;16;16;wall\n"+
-          "floor1,image/tileset/floor1.png,16,16,16,0,idle,,0;0;16;16;wall\n"+
-          "floor2,image/tileset/floor1.png,16,16,32,0,idle,,0;0;16;16;wall\n"+
-          "floor3,image/tileset/floor1.png,16,16,0,16,idle,,0;0;16;16;wall\n"+
-          "floor4,image/tileset/floor1.png,16,16,16,16,idle,,0;0;0;0;floor\n"+
-          "floor5,image/tileset/floor1.png,16,16,32,16,idle,,0;0;16;16;wall\n"+
-          "floor6,image/tileset/floor1.png,16,16,0,32,idle,,0;0;16;16;wall\n"+
-          "floor7,image/tileset/floor1.png,16,16,16,32,idle,,0;0;16;16;wall\n"+
-          "floor8,image/tileset/floor1.png,16,16,32,32,idle,,0;0;16;16;wall\n"+
-
-          "floor9,image/tileset/floor1.png,16,16,0,48,idle,,0;0;16;16;wall\n"+
-          "floor10,image/tileset/floor1.png,16,16,16,48,idle,,0;0;16;16;wall\n"+
-          "floor11,image/tileset/floor1.png,16,16,0,64,idle,,0;0;16;16;wall\n"+
-          "floor12,image/tileset/floor1.png,16,16,16,64,idle,,0;0;16;16;wall";
-
-mytiles = "floor0,0,0,1\n"+
-          "floor1,16,0,1\n"+
-          "floor1,32,0,1\n"+
-          "floor1,48,0,1\n"+
-          "floor1,64,0,1\n"+
-          "floor2,80,0,1\n"+
-          "floor3,0,16,1\n"+
-          "floor4,16,16,1\n"+
-          "floor4,32,16,1\n"+
-          "floor4,48,16,1\n"+
-          "floor4,64,16,1\n"+
-          "floor5,80,16,1\n"+
-          "floor6,0,32,1\n"+
-          "floor7,16,32,1\n"+
-          "floor7,32,32,1\n"+
-          "floor7,48,32,1\n"+
-          "floor7,64,32,1\n"+
-          "floor8,80,32,1";
-
 $(document).ready(function(){
   var mycanvas = $("#table")[0];
   engine = new Engine(1000/60, mycanvas);
@@ -57,9 +23,9 @@ $(document).ready(function(){
       cat1.setAnimation("moveR",[[16,0],[32,0],[48,0]],7);
       cat1.setAnimation("moveL",[[16,16],[32,16],[48,16]],7,"idleL");
 
-      cat1_player = new Interactive(cat1,16,16,0.2,"cat_player","player",[5,11,11,13]);
+      cat1_player = new Interactive(cat1,16,16,0.25,"cat_player","player",[5,12,11,14]);
       engine.display.camera.setTarget(cat1_player);
-      engine.display.drawInterative(cat1_player,16,16,1);
+      engine.display.drawInterative(cat1_player,16,16,3);
 
       cat1_player.display = self.display;
 
@@ -67,8 +33,39 @@ $(document).ready(function(){
         self.cancelMove = true;
       },{'name':[],'type':['wall']});
 
-      // hud = new Sprite("image/sprite/cat1.png",64,16,0,0,true);
-      // engine.display.drawMe(hud,0,0,2);
+      // 80,16
+      // 96,16
+      // var signal1       = new Tilemap("image/sprite/signal1.png",16,2,2);
+      // var plate1_sprite = signal1.tile(0);
+      // plate1_sprite.setAnimation("pressed",[[16,0]],1);
+      // var plate1        = new Interactive(plate1_sprite,64,16,0,'plate1','plate',[2,3,14,13]);
+      // engine.display.drawInterative(plate1);
+      // plate1.display = self.display;
+
+      // var lever1_sprite = signal1.tile(2);
+      // lever1_sprite.setAnimation("active",[[16,16]],1,"active");
+      // var lever1        = new Interactive(lever1_sprite,96,16,0,'lever1','lever',[3,5,13,11]);
+      // engine.display.drawInterative(lever1);
+
+      // plate1.setCollideRule('plateStep',function(self, obj){
+      //   self.sprite.animationStatus = "pressed";
+      // },{'name':[],'type':['player']});
+
+      // cat1_player.setCollideRule('leverChange',function(self, obj){
+      //   if(engine.control.keysPressed.includes(32) && !engine.control.keyHolder.includes(32)) {
+      //     engine.control.keyHolder.push(32);
+      //     if(obj.sprite.animationStatus != "active") {
+      //       obj.sprite.animationStatus = "active";
+      //     }
+      //     else {
+      //       obj.sprite.animationStatus = "idle";
+      //     }
+      //   }
+      // },{'name':[],'type':['lever']});
+
+      filter = new Sprite("image/sprite/filter1.png",320,160,0,0,true);
+      engine.display.drawMe(filter,0,0,4);
+      // CHAIN EXAMPLE
       // myhud = new Interactive(hud,0,0,0,'hud','hud',[0,0,0,0]);
       // engine.display.drawInterative(myhud,2);
       // cat1_player.chain(myhud,-142,67);

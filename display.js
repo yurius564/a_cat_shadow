@@ -81,6 +81,7 @@ class Display {
     for(var d in self.drawObj) { // 'Z' dimension
       for(var o in self.drawObj[d]) { // 'o' object
         if(self.drawObj[d][o].constructor.name == "Interactive") {
+          self.drawObj[d][o].checkCollides(0,0);
           var sprite    = self.drawObj[d][o].sprite;
           var animation = sprite.animations[sprite.animationStatus];
           var posX      = Math.ceil(self.drawObj[d][o].posX);

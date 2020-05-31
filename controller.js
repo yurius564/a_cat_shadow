@@ -26,7 +26,7 @@ class Control {
 
   listenerUp(e) {
     var keycode = e.keyCode || e.which;
-    this.keysPressed.splice(this.keysPressed.indexOf(keycode),1);
-    this.keyHolder.splice(this.keyHolder.indexOf(keycode),1);
+    if(this.keysPressed.includes(keycode)) this.keysPressed.splice(this.keysPressed.indexOf(keycode),1);
+    if(this.keyHolder.includes(keycode)) this.keyHolder.splice(this.keyHolder.indexOf(keycode),1);
   }
 }
