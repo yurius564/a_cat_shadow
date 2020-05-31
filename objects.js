@@ -159,6 +159,7 @@ class Interactive {
     this.colissionRules = [];
 
     this.chainedItems = [];
+    this.eventHandler = [];
 
     this.display = false;
   }
@@ -311,6 +312,16 @@ class Interactive {
           }
         }
       }
+    }
+  }
+
+  checkFor(func) {
+    this.eventHandler.push(func);
+  }
+
+  triggerHandlers() {
+    for(var e in this.eventHandler) {
+      this.eventHandler[e](this);
     }
   }
 }

@@ -81,7 +81,6 @@ class Display {
     for(var d in self.drawObj) { // 'Z' dimension
       for(var o in self.drawObj[d]) { // 'o' object
         if(self.drawObj[d][o].constructor.name == "Interactive") {
-          self.drawObj[d][o].checkCollides(0,0);
           var sprite    = self.drawObj[d][o].sprite;
           var animation = sprite.animations[sprite.animationStatus];
           var posX      = Math.ceil(self.drawObj[d][o].posX);
@@ -93,14 +92,6 @@ class Display {
           var posX      = self.drawObj[d][o][1];
           var posY      = self.drawObj[d][o][2];
         }
-
-        var frame_length       = animation.frames.length;
-        var this_frame         = animation.onFrame;
-        var this_fj            = animation.fj;
-        var this_fps           = animation.onFps;
-        sprite.animationStatus = (this_fps+1) == this_fj && (this_frame+1) == frame_length? animation.finalStatus: sprite.animationStatus;
-        animation.onFrame      = (this_fps+1) == this_fj? (this_frame+1)%frame_length: this_frame;
-        animation.onFps        = (this_fps+1)%this_fj;
 
         var cameraX = self.camera.target? (self.camera.target.posX-(self.sizeX/2))+(self.camera.target.sprite.sizeX/2): self.camera.posX;
         var cameraY = self.camera.target? (self.camera.target.posY-(self.sizeY/2))+(self.camera.target.sprite.sizeY/2): self.camera.posY;
@@ -122,6 +113,19 @@ class Display {
         !sprite.static){
           continue;
         }
+
+        if(self.drawObj[d][o].constructor.name == "Interactive") {
+          self.drawObj[d][o].checkCollides(0,0);
+          self.drawObj[d][o].triggerHandlers();
+        }
+
+        var frame_length       = animation.frames.length;
+        var this_frame         = animation.onFrame;
+        var this_fj            = animation.fj;
+        var this_fps           = animation.onFps;
+        sprite.animationStatus = (this_fps+1) == this_fj && (this_frame+1) == frame_length? animation.finalStatus: sprite.animationStatus;
+        animation.onFrame      = (this_fps+1) == this_fj? (this_frame+1)%frame_length: this_frame;
+        animation.onFps        = (this_fps+1)%this_fj;
 
         if(sprite.static) {
           posX += parseInt(cameraX);
