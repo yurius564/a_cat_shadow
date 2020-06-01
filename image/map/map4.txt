@@ -1,36 +1,3 @@
-sprites = "tile_0,image/tileset/TilesIndividual.png,16,16,0,0,idle,,0;0;16;16;wall\n"+
-          "tile_1,image/tileset/TilesIndividual.png,16,16,16,0,idle,,0;0;16;16;wall\n"+
-          "tile_2,image/tileset/TilesIndividual.png,16,16,32,0,idle,,0;0;16;16;wall\n"+
-          "tile_3,image/tileset/TilesIndividual.png,16,16,48,0,idle,,0;0;16;16;wall\n"+
-          "tile_4,image/tileset/TilesIndividual.png,16,16,64,0,idle,,0;0;16;16;wall\n"+
-          "tile_5,image/tileset/TilesIndividual.png,16,16,80,0,idle,,0;0;16;16;wall\n"+
-          "tile_6,image/tileset/TilesIndividual.png,16,16,96,0,idle,,0;0;16;16;wall\n"+
-          "tile_7,image/tileset/TilesIndividual.png,16,16,112,0,idle,,0;0;16;16;wall\n"+
-          "tile_8,image/tileset/TilesIndividual.png,16,16,128,0,idle,,0;0;16;16;wall\n"+
-          "tile_9,image/tileset/TilesIndividual.png,16,16,0,16,idle,,0;0;16;16;wall\n"+
-          "tile_10,image/tileset/TilesIndividual.png,16,16,48,16,idle,,0;0;16;16;wall\n"+
-          "tile_11,image/tileset/TilesIndividual.png,16,16,64,16,idle,,0;0;16;16;wall\n"+
-          "tile_12,image/tileset/TilesIndividual.png,16,16,80,16,idle\n"+
-          "tile_13,image/tileset/TilesIndividual.png,16,16,96,16,idle,,0;0;16;16;wall\n"+
-          "tile_14,image/tileset/TilesIndividual.png,16,16,112,16,idle,,0;0;16;11;wall\n"+
-          "tile_15,image/tileset/TilesIndividual.png,16,16,128,16,idle,,0;0;16;11;wall\n"+
-          "tile_16,image/tileset/TilesIndividual.png,16,16,0,32,idle,,0;0;16;16;wall\n"+
-          "tile_17,image/tileset/TilesIndividual.png,16,16,16,32,idle,,0;0;16;16;wall\n"+
-          "tile_18,image/tileset/TilesIndividual.png,16,16,32,32,idle,,0;0;16;16;wall\n"+
-          "tile_19,image/tileset/TilesIndividual.png,16,16,48,32,idle,,0;0;16;16;wall\n"+
-          "tile_20,image/tileset/TilesIndividual.png,16,16,64,32,idle,,0;0;16;16;wall\n"+
-          "tile_21,image/tileset/TilesIndividual.png,16,16,80,32,idle\n"+
-          "tile_22,image/tileset/TilesIndividual.png,16,16,96,32,idle,,0;0;16;16;wall\n"+
-          "tile_23,image/tileset/TilesIndividual.png,16,16,112,32,idle,,0;0;16;11;wall\n"+
-          "tile_24,image/tileset/TilesIndividual.png,16,16,128,32,idle,,0;0;16;11;wall\n"+
-          "tile_25,image/tileset/TilesIndividual.png,16,16,0,48,idle,,0;0;16;16;wall\n"+
-          "tile_26,image/tileset/TilesIndividual.png,16,16,16,48,idle,,0;0;16;16;wall\n"+
-          "tile_27,image/tileset/TilesIndividual.png,16,16,32,48,idle,,0;0;16;16;wall\n"+
-          "tile_28,image/tileset/TilesIndividual.png,16,16,48,48,idle,,0;0;16;16;wall\n"+
-          "tile_29,image/tileset/TilesIndividual.png,16,16,64,48,idle,,0;0;16;2;gateTop\n"+
-          "tile_30,image/tileset/TilesIndividual.png,16,16,80,48,idle,,0;0;0;0;gateBottom";
-
-mytiles =
 "tile_0,0,0,4\n"+
 "tile_0,448,0,4\n"+
 "tile_0,176,32,4\n"+

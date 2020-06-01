@@ -19,6 +19,7 @@ class Engine {
   stop(){
     clearInterval(this.process);
     this.control.stop();
+    // this.display.stop();
     console.warn("stopped.");
   }
 

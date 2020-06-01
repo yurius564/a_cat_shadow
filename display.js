@@ -83,8 +83,8 @@ class Display {
         if(self.drawObj[d][o].constructor.name == "Interactive") {
           var sprite    = self.drawObj[d][o].sprite;
           var animation = sprite.animations[sprite.animationStatus];
-          var posX      = Math.ceil(self.drawObj[d][o].posX);
-          var posY      = Math.ceil(self.drawObj[d][o].posY);
+          var posX      = Math.floor(self.drawObj[d][o].posX);
+          var posY      = Math.floor(self.drawObj[d][o].posY);
         }
         else {
           var sprite    = self.drawObj[d][o][0];

@@ -292,8 +292,8 @@ class Interactive {
 
   checkCollides(amountX, amountY) {
     // check for collision
-    var this_startX = Math.ceil(this.posX+amountX)+this.collisionBox[0];
-    var this_startY = Math.ceil(this.posY+amountY)+this.collisionBox[1];
+    var this_startX = Math.floor(this.posX+amountX)+this.collisionBox[0];
+    var this_startY = Math.floor(this.posY+amountY)+this.collisionBox[1];
     var this_sizeX  = this.collisionBox[2]-Math.ceil(this.collisionBox[0]-amountX);
     var this_sizeY  = this.collisionBox[3]-Math.ceil(this.collisionBox[1]-amountY);
 

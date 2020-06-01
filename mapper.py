@@ -1,6 +1,6 @@
 from PIL import Image
 
-img = Image.open('image/map/map2.bmp')
+img = Image.open('image/map/map4.bmp')
 img = img.convert('RGB')
 pix = img.load()
 
@@ -39,7 +39,7 @@ for y in range(img.size[1]):
 
 
 TILE_SIZE = 16 # temporary
-with open("image/map/map2.txt", "w") as f: # "floor0,0,0,1\n"
+with open("image/map/map4.txt", "w") as f: # "floor0,0,0,1\n"
     mapstr = ""
     for px in pixel:
         for coord in pixel[px][1]:
