@@ -14,6 +14,11 @@ function loadResources() {
   plateout_sound = document.createElement('audio');
   plateout_sound.setAttribute('src', "sound/plateOut.wav");
   plateout_sound.volume = 0.2;
+
+  soundtrack = document.createElement('audio');
+  soundtrack.setAttribute('src', "sound/soundtrack.wav");
+  soundtrack.volume = 0.1;
+  soundtrack.loop = true;
 }
 
 
@@ -160,6 +165,15 @@ $(document).ready(function(){
     
       PLAYER = cat1_player;
       engine.display.camera.setTarget(PLAYER);
+
+      first_interaction = true;
+    }
+
+    
+    if(self.control.keysPressed != []) {
+      // first interaction
+      first_interaction = false;
+      setTimeout(function(){soundtrack.play();},1000);
     }
 
     // camera testing
