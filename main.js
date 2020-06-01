@@ -163,8 +163,8 @@ $(document).ready(function(){
     }
 
     // camera testing
-    if(!self.control.keysPressed.includes(37) && !self.control.keysPressed.includes(38) &&
-       !self.control.keysPressed.includes(39) && !self.control.keysPressed.includes(40)) {
+    if(!self.control.keysPressed.includes(87) && !self.control.keysPressed.includes(83) &&
+       !self.control.keysPressed.includes(65) && !self.control.keysPressed.includes(68)) {
 
       // smooth player position when he stops
       PLAYER.moveTo(Math.floor(PLAYER.posX),Math.floor(PLAYER.posY));
@@ -176,32 +176,32 @@ $(document).ready(function(){
     }
     for(var key in self.control.keysPressed) {
       switch(self.control.keysPressed[key]) {
-        case 38: // up
+        case 87: // up W
           if(PLAYER.lastMove[0] > 0)
             PLAYER.moveUp(PLAYER.velocity, "moveR");
           else
             PLAYER.moveUp(PLAYER.velocity, "moveL");
           break;
-        case 40: // down
+        case 83: // down S
           if(PLAYER.lastMove[0] > 0)
             PLAYER.moveDown(PLAYER.velocity, "moveR");
           else
             PLAYER.moveDown(PLAYER.velocity, "moveL");
           break;
-        case 37: // left
+        case 65: // left A
          PLAYER.moveLeft(PLAYER.velocity, "moveL");
           break;
-        case 39: // right
+        case 68: // right D
          PLAYER.moveRight(PLAYER.velocity, "moveR");
           break;
-        // case 67: // C
-        //   if(!self.control.keyHolder.includes(67)) {
-        //     self.display.toggleDrawCollision();
-        //     self.control.keyHolder.push(67);
-        //   }
-        //   break;
-        case 90: // Z
-          if(!self.control.keyHolder.includes(90)) {
+        case 67: // C
+          if(!self.control.keyHolder.includes(67)) {
+            self.display.toggleDrawCollision();
+            self.control.keyHolder.push(67);
+          }
+          break;
+        case 69: // E
+          if(!self.control.keyHolder.includes(69)) {
             PLAYER.sprite.animationStatus = "sleep";
             if(PLAYER.name == "cat1") {
               PLAYER = cat2_player;
@@ -217,12 +217,12 @@ $(document).ready(function(){
               engine.display.camera.setTarget(PLAYER);
               PLAYER.sprite.animationStatus = "idle";
             },1000);
-            self.control.keyHolder.push(90);
+            self.control.keyHolder.push(69);
           }
           break;
-        case 27: // stop process on 'ESC'
-          self.stop();
-          break;
+        // case 27: // stop process on 'ESC'
+        //   self.stop();
+        //   break;
         default:
           // console.log(engine.control.keysPressed[key]);
       }
